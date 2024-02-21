@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>ప్రొఫైల్ వివరాలు</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        body, html {
+            height: 100%;
+            background-color: #f9f9f9;
+            background-size: cover;
+            background-image: url('C:\Users\hp\Desktop\istockphoto-1280587810-612x612.jpg');
+        }
+
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .login-box {
+            padding: 30px; /* Increased padding */
+            background-color: #ADD8E6; /* Set background color to orange */
+            box-shadow: 0px 5px 5px #ccc;
+            border-radius: 15px; /* Rounded corners */
+            border: 1px solid grey;
+            max-width: 300px; /* Increased maximum width of the login box */
+            width: 80%; /* Adjusted width */
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 20px; /* Add some margin below the logo */
+        }
+
+        .login-header img {
+            width: 100px; /* Adjust the width of the logo as desired */
+        }
+
+        .forgot-password {
+            text-align: right;
+            float: right;
+            font-size: 10px;
+        }
+
+        #error-message {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="login-header">
+                <img src="file:///C:/Users/hp/Desktop/WhatsApp Image 2024-02-03 at 14.32.15_5f4352f6.jpg" alt="లోగో">
+            </div>
+            <div id="error-message" class="alert alert-danger"></div>
+            <form id="login-form" method="post">
+                <div class="form-group">
+                    <label for="ఇమెయిలు">ఇమెయిలు</label>
+                    <input type="email" class="form-control" id="ఇమెయిలు" name="ఇమెయిలు" placeholder="మీ ఇమెయిల్ నమోదు చేయండి" required>
+                </div>
+                <div class="form-group">
+                    <label for="పాస్‌వర్డ్">పాస్‌వర్డ్</label>
+                    <input type="password" class="form-control" id="పాస్‌వర్డ్" name="పాస్‌వర్డ్" placeholder="మీ పాస్‌వర్డ్ నమోదు చేయండి" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">సైన్ ఇన్</button>
+                <span class="forgot-password">
+                    <a href="no-javascript1.html" title="పాస్‌వర్డ్ మరియున్నది" id="link-reset">పాస్‌వర్డ్ మరియున్నది?</a>
+                </span>
+                <button type="button" class="btn btn-success btn-block" onclick="redirectToRegistration()">నమోదు చేయండి</button> <!-- నమోదు చేయండి button -->
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function redirectToRegistration() {
+            window.location.href = "registration.html"; // Redirect to registration.html after clicking register
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('login-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                var email = document.getElementById('ఇమెయిలు').value;
+                var password = document.getElementById('పాస్‌వర్డ్').value;
+
+                // Your authentication logic here
+                if (email === "admin@gmail.com" && password === "admin123") {
+                    alert("సైన్ ఇన్ విజయవంతమైంది");
+                    window.location.href = "welcome.html"; // Redirect to welcome.html on successful login
+                } else {
+                    alert("చెల్లని సమాచారం");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

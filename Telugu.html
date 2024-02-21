@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>వ్యక్తిగత వివరాలు</title>
+    <style>
+        body {
+            background-image: url('C:/Users/hp/Desktop/WhatsApp Image 2024-02-03 at 18.53.56_e4898598.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            width: 800px;
+            margin-top: 20px;
+        }
+        .left-section, .right-section {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .left-section {
+            text-align: left;
+            background-color: rgba(255, 182, 193, 0.7); /* పాటిష్ట్ మధ్యపానిపు మీధ ఉడికించబడింది */
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .right-section {
+            text-align: left;
+            background-color: rgba(255, 182, 193, 0.7); /* పాటిష్ట్ మధ్యపానిపు మీధ ఉడికించబడింది */
+            border-radius: 10px;
+            padding-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50; /* ఆకుపచ్చపు */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <h2>వ్యక్తిగత వివరాలు</h2>
+            <label for="పేరు">పేరు:</label>
+            <input type="text" name="పేరు" required><br>
+            <label for="ఫోన్ సంఖ్య">ఫోన్ సంఖ్య:</label>
+            <input type="tel" name="ఫోన్ సంఖ్య" required><br>
+            <label for="ఇమెయిల్">ఇమెయిల్:</label>
+            <input type="email" name="ఇమెయిల్" required><br>
+        </div>
+        <div class="right-section">
+            <h2>అదనపు వివరాలు</h2>
+            <label for="జాతి">జాతి:</label>
+            <select name="జాతి">
+                <option value="oc">OC</option>
+                <option value="obc">OBC</option>
+                <option value="sc">SC</option>
+                <option value="st">ST</option>
+                <option value="other">ఇతర</option>
+            </select><br>
+            <label for="ధర్మం">ధర్మం:</label>
+            <select name="ధర్మం">
+                <option value="hindu">హిందూ</option>
+                <option value="christian">క్రిస్టియన్</option>
+                <option value="muslim">ముస్లిం</option>
+                <option value="others">ఇతర</option>
+            </select><br>
+            <label for="లింగం">లింగం:</label>
+            <select name="లింగం">
+                <option value="female">మహిళ</option>
+                <option value="male">పురుష</option>
+                <option value="other">ఇతర</option>
+            </select><br>
+            <label for="సర్టిఫికెట్">సర్టిఫికెట్ అప్‌లోడ్ చేయండి:</label>
+            <input type="file" name="సర్టిఫికెట్" accept=".pdf, .doc, .docx"><br>
+            <div style="background-color: rgba(255, 182, 193, 0.7); padding: 10px; border-radius: 5px;">
+                <button type="button" onclick="saveAndOpenWelcomePage()">వివరాలు భద్రపరచండి మరియు స్వాగత పేజీని తెరవండి</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function saveAndOpenWelcomePage() {
+            // వివరాలు

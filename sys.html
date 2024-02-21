@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Symptoms</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://th.bing.com/th/id/OIP.hWycvTZj2VywQllc6JVFAgHaEo?pid=ImgDet&w=474&h=296&rs=1') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .symptoms-block {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .symptoms-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .subblock {
+            background-color: #fff;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .selected {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+
+        .submit-block {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .submit-block:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="symptoms-block">
+    <div class="symptoms-title">SYMPTOMS</div>
+    <div class="subblock" onclick="selectSymptom(this)">Fever</div>
+    <!-- Other symptom subblocks -->
+    <div class="subblock" onclick="selectSymptom(this)">Joint Pain</div>
+    <div class="subblock" onclick="selectSymptom(this)">Chest Pain</div>
+    <div class="subblock" onclick="selectSymptom(this)">Memory Loss</div>
+    <div class="subblock" onclick="selectSymptom(this)">Abdominal Pain</div>
+    <div class="subblock" onclick="selectSymptom(this)">Cough</div>
+    <div class="subblock" onclick="selectSymptom(this)">Fatigue</div>
+    <div class="subblock" onclick="selectSymptom(this)">Tremors</div>
+    <div class="subblock" onclick="selectSymptom(this)">Joint Swelling</div>
+    <div class="subblock" onclick="selectSymptom(this)">Headache</div>
+    <div class="subblock" onclick="selectSymptom(this)">Rash</div>
+    <div class="subblock" onclick="selectSymptom(this)">Shortness of Breath</div>
+    <div class="subblock" onclick="selectSymptom(this)">Confusion</div>
+    <div class="subblock" onclick="selectSymptom(this)">Nausea</div>
+    <div class="subblock" onclick="selectSymptom(this)">Sore Throat</div>
+    <div class="subblock" onclick="selectSymptom(this)">Weight Loss</div>
+    <div class="subblock" onclick="selectSymptom(this)">Stiffness</div>
+    <div class="subblock" onclick="selectSymptom(this)">Pain</div>
+    <div class="subblock" onclick="selectSymptom(this)">Fever</div>
+    <div class="subblock" onclick="selectSymptom(this)">Dizziness</div>
+    <div class="subblock" onclick="selectSymptom(this)">Difficulty Speaking</div>
+    <div class="subblock" onclick="selectSymptom(this)">Vomiting</div>
+    <div class="subblock" onclick="selectSymptom(this)">Runny Nose</div>
+    <div class="subblock" onclick="selectSymptom(this)">Night Sweats</div>
+    <div class="subblock" onclick="selectSymptom(this)">Bradykinesia</div>
+    <div class="subblock" onclick="selectSymptom(this)">Morning Stiffness</div>
+    <div class="subblock" onclick="selectSymptom(this)">Swelling in Legs</div>
+
+    
+    <div class="submit-block" onclick="submitSymptoms()">Submit</div>
+</div>
+
+<script>
+    function selectSymptom(element) {
+        element.classList.toggle('selected');
+    }
+
+    function submitSymptoms() {
+        const selectedSymptoms = document.querySelectorAll('.subblock.selected');
+        const selectedSymptomsArray = Array.from(selectedSymptoms).map(symptom => symptom.innerText);
+
+        if (selectedSymptomsArray.length > 0) {
+            alert('Selected Symptoms: ' + selectedSymptomsArray.join(', '));
+            window.location.href = "file:///C:/Users/hp/Desktop/r.html";
+        } else {
+            alert('No symptoms selected.');
+        }
+    }
+    function submitSymptoms() {
+            const selectedSymptoms = document.querySelectorAll('.subblock.selected');
+            const selectedSymptomsArray = Array.from(selectedSymptoms).map(symptom => symptom.innerText);
+
+            if (selectedSymptomsArray.length > 0) {
+                // Simulated disease prediction (replace with actual logic)
+                const predictedDisease = predictDisease(selectedSymptomsArray);
+
+                if (predictedDisease) {
+                    alert('Predicted Disease: ' + predictedDisease);
+                } else {
+                    alert('Unable to predict the disease.');
+                }
+            } else {
+                alert('No symptoms selected.');
+            }
+        }
+
+        function predictDisease(symptoms) {
+            // Simulated logic (replace with actual disease prediction logic)
+            // This is just a placeholder, you need a more sophisticated backend logic.
+            const randomDiseases = ['Flu', 'Common Cold', 'Allergies', 'COVID-19', 'Migraine'];
+            return randomDiseases[Math.floor(Math.random() * randomDiseases.length)];
+        }
+</script>
+
+</body>
+</html>

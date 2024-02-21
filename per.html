@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Person Details</title>
+    <style>
+        /* Your CSS styles here */
+    </style>
+</head>
+<body>
+    <!-- Your HTML content here -->
+
+    <script>
+        function saveAndOpenWelcomePage() {
+            var personalDetails = {
+                name: document.getElementsByName("name")[0].value,
+                phone: document.getElementsByName("phone")[0].value,
+                email: document.getElementsByName("email")[0].value,
+                age: document.getElementsByName("age")[0].value,
+                blood_group: document.getElementsByName("blood_group")[0].value,
+                caste: document.getElementsByName("caste")[0].value,
+                religion: document.getElementsByName("religion")[0].value,
+                gender: document.getElementsByName("gender")[0].value,
+                certificate: document.getElementsByName("certificate")[0].value
+            };
+            localStorage.setItem("personalDetails", JSON.stringify(personalDetails));
+            alert("Personal details saved successfully!");
+            window.location.href = "file:///C:/Users/hp/Desktop/summary.html";
+        }
+    </script>
+</body>
+</html>

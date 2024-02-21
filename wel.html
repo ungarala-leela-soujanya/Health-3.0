@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://th.bing.com/th/id/OIP.4P3Dbv2kJFJoVbF12n9vJwHaEK?rs=1&pid=ImgDetMain') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .profile-img {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-container {
+            display: none;
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-container.active {
+            display: block;
+        }
+
+        .profile-message {
+            font-size: 14px;
+        }
+
+        .center-block {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .symptoms-block {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+
+        .message {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        /* Style the Yes and No buttons */
+        .yes-button, .no-button {
+            background-color: #4CAF50; /* Green */
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none; /* Remove button border */
+            outline: none; /* Remove button outline */
+            margin: 0 10px; /* Add margin between buttons */
+            transition: background-color 0.3s; /* Smooth transition for background color */
+        }
+
+        /* Style the button hover effect */
+        .yes-button:hover, .no-button:hover {
+            background-color: #45a049; /* Darker shade of green */
+        }
+    </style>
+</head>
+<body>
+
+<a href="file:///C:/Users/hp/Desktop/h.html">
+    <div class="profile-img">
+        <img src="https://th.bing.com/th/id/OIP.-246rhtiqQahzZFURpEkJAHaHv?pid=ImgDet&w=474&h=495&rs=1" alt="Profile Logo">
+    </div>
+</a>
+
+<div class="profile-container">
+    <div class="profile-img">
+        <img src="https://th.bing.com/th/id/OIP.-246rhtiqQahzZFURpEkJAHaHv?pid=ImgDet&w=474&h=495&rs=1" alt="Profile Logo">
+    </div>
+    <p class="profile-message">Profile</p>
+</div>
+
+<div class="center-block">
+    <div class="symptoms-block">
+        <img src="https://www.elvingtonmedicalpractice.co.uk/images/uploads/original/26/new-patients-welcome.jpg" alt="New Patients Welcome" style="max-width: 100%; border-radius: 10px; margin-bottom: 20px;">
+        <div class="message">Click here to enter your symptoms</div>
+        <!-- Yes and No buttons -->
+        <button class="yes-button" onclick="yes()">Yes</button>
+        <button class="no-button" onclick="no()">No</button>
+    </div>
+</div>
+
+<script>
+    function yes() {
+        // Add code here to save the details
+        // For example: retrieve selected values from the select elements and send them to a server
+        
+        alert("Details saved successfully!");
+
+        // Redirect to the specified HTML page
+        window.location.href = "file:///C:/Users/hp/Desktop/sys.html";
+    }
+
+    function no() {
+        alert("No symptoms!");
+    }
+</script>
+
+</body>
+</html>

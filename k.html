@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Sign Up/In to SITENAME</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+    body, html {
+      height: 100%;
+      background-color: #f9f9f9;
+      background-size: cover;
+      background-image: url('file:///C:/Users/hp/Desktop/istockphoto-1280587810-612x612.jpg');
+    }
+
+    .login-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .login-box {
+      padding: 30px; /* Increased padding */
+      background-color: #ADD8E6; /* Set background color to orange */
+      box-shadow: 0px 5px 5px #ccc;
+      border-radius: 15px; /* Rounded corners */
+      border: 1px solid grey;
+      max-width: 300px; /* Increased maximum width of the login box */
+      width: 80%; /* Adjusted width */
+    }
+
+    .login-header {
+      text-align: center;
+      margin-bottom: 20px; /* Add some margin below the logo */
+    }
+
+    .login-header img {
+      width: 100px; /* Adjust the width of the logo as desired */
+    }
+
+    .forgot-password {
+      text-align: right;
+      float: right;
+      font-size: 10px;
+    }
+
+    #error-message {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <div class="login-header">
+        <img src="file:///C:/Users/hp/Desktop/WhatsApp Image 2024-02-03 at 14.32.15_5f4352f6.jpg" alt="Logo">
+      </div>
+      <div id="error-message" class="alert alert-danger"></div>
+      <form id="login-form" method="post">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+        <div class="form-group">
+          <label for="language">Language</label>
+          <select class="form-control" id="language">
+            <option value="en">English</option>
+            <option value="te">తెలుగు</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+        <span class="forgot-password">
+          <a href="no-javascript1.html" title="Forgot Password" id="link-reset">Forgot Password?</a>
+        </span>
+        <button type="button" class="btn btn-success btn-block" onclick="redirectToRegistration()">Register</button> <!-- Register button -->
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function redirectToRegistration() {
+      window.location.href = "registration.html"; // Redirect to registration.html after clicking register
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('login-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        var language = document.getElementById('language').value;
+
+        // Your authentication logic here
+        if (email === "admin@gmail.com" && password === "admin123") {
+          alert("Login Successfully");
+          if (language === "te") {
+            window.location.href = "file:///C:/Users/hp/Desktop/Telugu.html"; // Redirect to Telugu.html for Telugu language
+          } else {
+            window.location.href = "file:///C:/Users/hp/Desktop/welcome.html"; // Redirect to welcome.html for English language
+          }
+        } else {
+          alert("Invalid Information");
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Web Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://th.bing.com/th/id/OIP.wVjw_pU0z989XrFUjJI0JQHaEK?rs=1&pid=ImgDetMain') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh; /* Make sure the background covers the entire viewport height */
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Align items with space between them */
+            flex-wrap: wrap; /* Allow items to wrap to the next row */
+        }
+
+        .illness-block {
+            margin-left: 20px;
+            padding: 40px;
+            width: 400px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .subblock {
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* New styles for Medicines block */
+        .medicines-block {
+            margin-right: 20px;
+            margin-top: 20px; /* Add margin to create space between blocks */
+            padding: 40px;
+            width: 200px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .medicines-logo {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        /* New styles for Doctor Consultancy block */
+        .doctor-block {
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 20px; /* Add margin to create space between blocks */
+            padding: 30px;
+            width: 200px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .doctor-logo {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="illness-block">
+    <h2>Your Illness</h2>
+    <div class="subblock"></div>
+</div>
+
+<div class="medicines-block">
+    <h2>Medicines</h2>
+    <a href="file:///C:/Users/hp/Desktop/medicen.html"><img src="https://media.istockphoto.com/vectors/capsule-icon-vector-id627183488?k=6&m=627183488&s=612x612&w=0&h=DBl9nhGF04Y3zae61nuutZofhnzEwTSCT41c5vaLVkM=" alt="Medicines Logo" class="medicines-logo"></a>
+</div>
+
+<div class="doctor-block">
+    <h2>Doctor Consultancy</h2>
+    <a href="file:///C:/Users/hp/Desktop/un.html"><img src="https://th.bing.com/th/id/OIP.roED7Umy-U5h_Cbz39Y4SQHaH_?rs=1&pid=ImgDetMain" alt="Doctor Consultancy Logo" class="doctor-logo"></a>
+</div>
+
+<!-- Your page content goes here --><!-- Add this script to the end of your HTML body in un.html -->
+<script>
+    // Function to get query parameter from URL
+    function getQueryParam(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+    }
+
+    // Get the diagnosis from the URL
+    const diagnosis = getQueryParam('diagnosis');
+
+    // Display the diagnosis information in the subblock
+    document.querySelector('.subblock').innerText = 'Diagnosis: ' + diagnosis;
+</script>
+
+</body>
+</html>

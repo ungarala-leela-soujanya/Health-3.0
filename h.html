@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information and Medical History Summary</title>
+    <!-- Your CSS styles here -->
+</head>
+<body>
+    <h1>Summary</h1>
+
+    <!-- Display User Information -->
+    <h2>User Information:</h2>
+    <pre id="userDetails"></pre>
+
+    <!-- Display Medical History Data -->
+    <h2>Medical History:</h2>
+    <pre id="medicalHistoryData"></pre>
+
+    <!-- Add a form for users to enter additional details -->
+    <h2>Enter Additional Details:</h2>
+    <form id="additionalDetailsForm">
+        <label for="additionalInfo">Additional Information:</label>
+        <input type="text" id="additionalInfo" name="additionalInfo"><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        // Retrieve user information and medical history data from localStorage
+        var userDetails = JSON.parse(localStorage.getItem("userDetails"));
+        var medicalHistoryData = JSON.parse(localStorage.getItem("medicalHistoryData"));
+
+        // Display user details
+        document.getElementById("userDetails").innerText = JSON.stringify(userDetails, null, 2);
+
+        // Display medical history data
+        document.getElementById("medicalHistoryData").innerText = JSON.stringify(medicalHistoryData, null, 2);
+
+        // Display username and email from localStorage
+        var username = localStorage.getItem("username");
+        var email = localStorage.getItem("email");
+
+        document.write(<p>Username: ${username}</p>);
+        document.write(<p>Email: ${email}</p>);
+
+        // Clear localStorage after retrieving data
+        localStorage.removeItem("userDetails");
+        localStorage.removeItem("medicalHistoryData");
+
+        // Add event listener for form submission
+        document.getElementById("additionalDetailsForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Retrieve additional information from the form
+            var additionalInfo = document.getElementById("additionalInfo").value;
+
+            // Do something with the additional information (e.g., store in localStorage)
+            var additionalDetails = { additionalInfo: additionalInfo };
+            localStorage.setItem("additionalDetails", JSON.stringify(additionalDetails));
+
+            // Optional: Redirect to another page after form submission
+            // window.location.href = "another-page.html";
+        });
+    </script>
+</body>
+</html>
